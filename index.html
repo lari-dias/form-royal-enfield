@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venda a sua moto</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header"></div>
+      <div class="form-container">
+        <div class="form-header">
+          <p>Formulário</p>
+        </div>
+        <div class="form-body">
+          <h1 class="form-title">Venda a sua Royal Enfield!</h1>
+          <p>Descreva as características da moto:</p>
+          <form id="form">
+            <div class="box-input">
+              <label for="model">
+                Modelo
+                <span class="required-field">*</span>
+              </label>
+              <input
+                type="text"
+                name="model"
+                id="model"
+                class="block input required"
+                placeholder="Insira o modelo da moto"
+                oninput="modelValidate()"
+              />
+              <span id="erro-modelo"></span>
+            </div>
+            <div class="box-input">
+              <label for="ano">
+                Ano
+                <span class="required-field">*</span>
+              </label>
+              <input
+                type="number"
+                name="ano"
+                id="ano"
+                class="block input required"
+                placeholder="Insira o ano de fabricação"
+                oninput="yearValidate()"
+              />
+              <span id="erro-ano"></span>
+            </div>
+            <div class="box-input">
+              <label for="model">
+                Preço
+                <span class="required-field">*</span>
+              </label>
+              <input
+                type="number"
+                name="price"
+                id="price"
+                class="block input required"
+                placeholder="Defina um preço"
+                oninput="priceValidate()"
+              />
+              <span id="erro-preco" style="color: red; font-size: 0.9em"></span>
+            </div>
+            <div class="box-input">
+              <label for="description">
+                Descrição <span class="span-required">*</span>
+              </label>
+              <textarea
+                name="description"
+                id="description"
+                class="block"
+                placeholder="Insira uma breve descrição da moto"
+                required
+              ></textarea>
+            </div>
+            <div class="opcional-box">
+              <p>Acessórios Adicionais</p>
+              <ul class="optional-list">
+                <li>
+                  <input
+                    type="checkbox"
+                    id="bau"
+                    name="opcional[]"
+                    value="bau"
+                  />
+                  <label for="bau">Baú</label>
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="protetor-motor"
+                    name="opcional[]"
+                    value="protetor-motor"
+                  />
+                  <label for="protetor-motor">Protetor de motor</label>
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="banco-personalizado"
+                    name="opcional[]"
+                    value="banco-personalizado"
+                  />
+                  <label for="banco-personalizado">Banco personalizado</label>
+                </li>
+              </ul>
+            </div>
+            <div class="box-input">
+              <label for="outros-acessorios">
+                Outros acessórios <span class="span-required">*</span>
+              </label>
+              <input
+                type="text"
+                name="outros-acessorios"
+                id="outros-acessorios"
+                class="block"
+                placeholder="Outros acessórios"
+                required
+              />
+            </div>
+            <div class="box-input">
+              <p>Fotos da moto: <span class="span-required">*</span></p>
+              <input
+                type="file"
+                multiple
+                accept="image/png, image/jpeg"
+                id="images"
+                name="images"
+                required
+              />
+            </div>
+            <div class="box-input">
+              <label for="vendedor">
+                Nome do proprietário <span class="span-required">*</span>
+              </label>
+              <input
+                type="text"
+                name="vendedor"
+                id="vendedor"
+                class="block input required"
+                placeholder="Digite o seu nome"
+                oninput="nomeValidate()"
+              />
+              <span id="erro-nome" style="color: red; font-size: 0.9em"></span>
+            </div>
+            <div class="box-input">
+              <label for="email">
+                E-mail para contato <span class="span-required">*</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="block input required"
+                placeholder="Digite o seu e-mail"
+                oninput="emailValidate()"
+              />
+              <span id="erro-email" style="color: red; font-size: 0.9em"></span>
+            </div>
+            <input type="submit" value="Enviar" class="btn-submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
